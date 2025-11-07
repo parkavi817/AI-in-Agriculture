@@ -1,0 +1,971 @@
+[
+  {
+    "id": "operation-greens",
+    "name": "Operation Greens",
+    "description": "Stabilizes supply and prices of tomato, onion & potato (TOP) through support to FPOs, logistics & processing.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 75,
+    "amount": "₹500 crore corpus for TOP crops",
+    "benefits": "Reduces price volatility and improves farmer returns.",
+    "eligibility": [
+      "FPOs and food processors dealing with TOP crops"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://en.wikipedia.org/wiki/Operation_Greens"
+  },
+  {
+    "id": "atal-bhujal-yojana",
+    "name": "Atal Bhujal Yojana",
+    "description": "Groundwater management scheme launched in 2019, active till 2025 across seven states to improve water sustainability.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 75,
+    "amount": "Community‑based management funding",
+    "benefits": "Enhances groundwater recharge and efficient usage.",
+    "eligibility": [
+      "Participating Gram Panchayats in priority states",
+      "Community-level water users groups"
+    ],
+    "deadline": "2020–2025",
+    "applicationLink": "https://en.wikipedia.org/wiki/Atal_Bhujal_Yojana"
+  },
+  {
+    "id": "pm-kisan-samman-nidhi",
+    "name": "Pradhan Mantri Kisan Samman Nidhi (PM‑KISAN)",
+    "description": "Provides ₹6,000 per year in three installments to small and marginal land‑holding farmer families via direct benefit transfer.",
+    "category": "Income Support",
+    "difficulty": "Easy",
+    "popularity": 98,
+    "amount": "₹6,000/year",
+    "benefits": "Direct income support deposited into bank accounts.",
+    "eligibility": [
+      "Landholding farmer families",
+      "Aadhaar and bank account seeded",
+      "Not a regular taxpayer"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://pmkisan.gov.in/"
+  },
+  {
+    "id": "pm-fasal-bima-yojana",
+    "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "description": "Crop insurance scheme covering yield loss due to natural calamities, pests, and disease.",
+    "category": "Insurance",
+    "difficulty": "Medium",
+    "popularity": 90,
+    "amount": "Premium subsidized by government",
+    "benefits": "Compensation for insured crop losses.",
+    "eligibility": [
+      "Farmers growing notified crops in notified areas",
+      "Registration before seasonal cut‑off date"
+    ],
+    "deadline": "Season‑wise windows",
+    "applicationLink": "https://pmfby.gov.in/"
+  },
+  {
+    "id": "soil-health-card-scheme",
+    "name": "Soil Health Card Scheme",
+    "description": "Issues soil health cards based on testing, with crop‑wise fertilizer recommendations.",
+    "category": "Soil Health",
+    "difficulty": "Easy",
+    "popularity": 85,
+    "amount": "Free soil testing",
+    "benefits": "Optimizes fertilizer usage and improves yield.",
+    "eligibility": [
+      "All cultivable landholders",
+      "Voluntary participation"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "http://soilhealth.dac.gov.in"
+  },
+  {
+    "id": "pradhan-mantri-krishi-sinchayee-yojana",
+    "name": "Pradhan Mantri Krishi Sinchai Yojana (PMKSY)",
+    "description": "Promotes micro‑irrigation and efficient water use under ‘Per Drop More Crop’.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 88,
+    "amount": "Up to 70% subsidy on irrigation systems",
+    "benefits": "Water conservation and yield improvement.",
+    "eligibility": [
+      "Farmers in water‑scarce regions",
+      "State agriculture department beneficiaries"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://pmksy.gov.in/"
+  },
+  {
+    "id": "pm-matsya-sampada-yojna",
+    "name": "Pradhan Mantri Matsya Sampada Yojana (PMMSY)",
+    "description": "Modernizes fisheries and aquaculture infrastructure across India.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 80,
+    "amount": "Subsidies for infrastructure and equipment",
+    "benefits": "Boosts fish productivity and exports.",
+    "eligibility": [
+      "Fish farmers and allied stakeholders",
+      "Approved project proposals"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://pmmsy.dof.gov.in/"
+  },
+  {
+    "id": "paramparagat-krishi-vikas-yojana",
+    "name": "Paramparagat Krishi Vikas Yojana (PKVY)",
+    "description": "Cluster-based organic farming promotion with certification and training.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 82,
+    "amount": "Support for organic cluster development",
+    "benefits": "Premium pricing and chemical-free produce.",
+    "eligibility": [
+      "Farmer clusters (≥20 farmers)",
+      "Adherence to organic farming practices"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://rkvy.nic.in/"
+  },
+  {
+    "id": "agri-infrastructure-fund",
+    "name": "Agri Infrastructure Fund (AIF)",
+    "description": "Offers concessional loans for setting up post‑harvest agribusiness infrastructure.",
+    "category": "Credit",
+    "difficulty": "Medium",
+    "popularity": 88,
+    "amount": "Loans up to ₹2 crore/project + interest subvention",
+    "benefits": "Reduces losses, improves value chains.",
+    "eligibility": [
+      "Farmer Producer Organisations (FPOs)",
+      "Agri‑entrepreneurs and cooperatives"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.agrifund.gov.in/"
+  },
+  {
+    "id": "pm-kisan-maandhan-yojana",
+    "name": "Pradhan Mantri Kisan Maandhan Yojana (PM‑KMY)",
+    "description": "Pension scheme providing ₹3,000/month post-retirement for small/marginal farmers.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 85,
+    "amount": "₹3,000/month pension after 60",
+    "benefits": "Old-age income security.",
+    "eligibility": [
+      "Ages 18‑40 with monthly contributions",
+      "Small and marginal farmers"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://pmmodiyojanas.in/pm-kisan-maandhan-yojna/"
+  },
+  {
+    "id": "e-nam-platform",
+    "name": "National Agriculture Market (e‑NAM)",
+    "description": "Online trading platform connecting farmers and buyers across India for transparent pricing.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 80,
+    "amount": "Commission-free digital market access",
+    "benefits": "Better price discovery and reduced intermediaries.",
+    "eligibility": [
+      "Registered farmers/traders via e‑NAM portal"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.enam.gov.in"
+  },
+  {
+    "id": "student-scheme-drone-survey",
+    "name": "Svamitva Yojana",
+    "description": "Drone-based property survey initiative to map rural inhabited lands (abadi plots).",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 70,
+    "amount": "Not for direct financial benefit",
+    "benefits": "Helps resolve land disputes, improves credit access.",
+    "eligibility": [
+      "Villages selected under the scheme",
+      "Drone-surveyed rural residents"
+    ],
+    "deadline": "2021–2025",
+    "applicationLink": "https://en.wikipedia.org/wiki/Svamitva_Yojana"
+  },
+  {
+    "id": "rashtriya-krishi-vikas-yojna",
+    "name": "Rashtriya Krishi Vikas Yojana (RKVY)",
+    "description": "Grant-based scheme to create agricultural infrastructure and boost agri‑entrepreneurship.",
+    "category": "Credit",
+    "difficulty": "Medium",
+    "popularity": 82,
+    "amount": "Central and State grants for projects",
+    "benefits": "Accelerates rural agri‑growth and infrastructure.",
+    "eligibility": [
+      "State projects, FPOs, cooperatives"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://testbook.com/ias-preparation/agriculture-schemes-in-india"
+  },
+  {
+    "id": "krishi-samruddhi-yojana-maharashtra",
+    "name": "Krishi Samruddhi Yojana (Maharashtra)",
+    "description": "State scheme launched from FY 2025‑26 with ₹5,000 crore/year support for sustainable farming.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 76,
+    "amount": "₹5,000 crore/year",
+    "benefits": "Supports organic farming, mechanization and infrastructure.",
+    "eligibility": [
+      "Women, SC/ST, small/marginal farmers, FPOs in Maharashtra"
+    ],
+    "deadline": "2025‑2030",
+    "applicationLink": "https://timesofindia.indiatimes.com/city/nashik"
+  },
+  {
+    "id": "millet-kiwi-dragonfruit-plan-uttarakhand",
+    "name": "Millet Mission & Kiwi/Dragon Fruit Policy (Uttarakhand)",
+    "description": "Cluster-based mission to support millets, kiwi, dragon fruit & apple post‑harvest in hilly areas.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 70,
+    "amount": "Allocated ₹134.8–₹894 crore across missions",
+    "benefits": "Boosts horticulture in Uttarakhand hills.",
+    "eligibility": [
+      "Farmers in designated districts",
+      "Participants in horticultural projects"
+    ],
+    "deadline": "2025–2030",
+    "applicationLink": "https://timesofindia.indiatimes.com/city/dehradun"
+  },
+  {
+    "id": "urea-subsidy-scheme",
+    "name": "Urea Subsidy Scheme",
+    "description": "Central government pays subsidy to make urea available to farmers at affordable rates.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 84,
+    "amount": "Difference between MRP & government-discounted price",
+    "benefits": "Lowers input costs for farmers.",
+    "eligibility": [
+      "All farmers purchasing urea fertilizers in India"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": ""
+  },
+  {
+    "id": "pm-kusum-scheme",
+    "name": "PM‑KUSUM Scheme",
+    "description": "Solar irrigation and energy initiative providing subsidy on solar pumps and grid-connected solar plants.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 88,
+    "amount": "Up to 60% subsidy",
+    "benefits": "Reduces diesel dependency, enables selling solar power.",
+    "eligibility": [
+      "Agricultural pump owners",
+      "Willingness to install solar energy systems"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://vikaspedia.in/agriculture/policies-and-schemes/pm-kusum"
+  },
+  {
+    "id": "krishi-kalyan-abhiyan",
+    "name": "Krishi Kalyan Abhiyan",
+    "description": "Campaign providing farmer training, soil health cards, mini‑kits, livestock vaccinations across aspirational districts.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 80,
+    "amount": "Non‑monetary support/training kits",
+    "benefits": "Promotes best farming practices and farmer education.",
+    "eligibility": [
+      "Farmers in participating aspirational districts"
+    ],
+    "deadline": "June–July 2018 (Phase I & II)",
+    "applicationLink": "https://pib.gov.in/newsite/PrintRelease.aspx?relid=179747"
+  },
+  {
+    "id": "pm-fme-scheme",
+    "name": "PM FME Scheme (Formalisation of Micro Food Processing Enterprises)",
+    "description": "Provides financial, technical support and training to micro food processing units including farmer-families.",
+    "category": "Credit",
+    "difficulty": "Medium",
+    "popularity": 82,
+    "amount": "Up to ₹15 lakh per unit",
+    "benefits": "Promotes agri-processing and job creation.",
+    "eligibility": [
+      "FPOs, cooperatives, self-help groups",
+      "Micro food processing units"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.mofpi.gov.in/schemes"
+  },
+  {
+    "id": "bharat-kisan-udyami",
+    "name": "National Bamboo Mission",
+    "description": "Aims to develop bamboo sector across value chain including farmers and enterprises.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 70,
+    "amount": "Subsidy for planting & processing",
+    "benefits": "Promotes bamboo cultivation and livelihood.",
+    "eligibility": [
+      "Farmers, micro-enterprises, FPOs"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.bamboo.gov.in/"
+  },
+  {
+    "id": "green-revolution-krishonnati",
+    "name": "Green Revolution – Krishonnati Yojana",
+    "description": "Focuses on enhancing productivity of high-yielding seed varieties and value chains.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 75,
+    "amount": "Infrastructure grants & input subsidies",
+    "benefits": "Enhances food production and exports.",
+    "eligibility": [
+      "State agricultural agencies and FPOs"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.testbook.com/ias-preparation/agriculture-schemes-in-india"
+  },
+  {
+    "id": "pm-ashaa",
+    "name": "PM-AASHA (Annadata Aay SanraksHan Abhiyan)",
+    "description": "Ensures remunerative prices to farmers via MSP and procurement operations.",
+    "category": "Income Support",
+    "difficulty": "Medium",
+    "popularity": 80,
+    "amount": "MSP guarantee and procurement subsidies",
+    "benefits": "Reduces distress sales and stabilizes income.",
+    "eligibility": [
+      "All farmers covered under MSP procurement"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.testbook.com/ias-preparation/agriculture-schemes-in-india"
+  },
+  {
+    "id": "rashtriya-gokul-mission",
+    "name": "Rashtriya Gokul Mission",
+    "description": "Conservation and development of indigenous bovine breeds to improve dairy farmer incomes.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 72,
+    "amount": "Support for breed development",
+    "benefits": "Higher milk productivity and genetic quality.",
+    "eligibility": [
+      "Livestock farmers and cooperatives"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.testbook.com/ias-preparation/agriculture-schemes-in-india"
+  },
+  {
+    "id": "national-food-security-mission",
+    "name": "National Food Security Mission (NFSM)",
+    "description": "Enhances production of rice, wheat, pulses and coarse cereals via resource support and inputs.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 78,
+    "amount": "Input support to farmers for crop targets",
+    "benefits": "Boosts national food stock and farmer incomes.",
+    "eligibility": [
+      "Farmers growing target crops"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://testbook.com/ias-preparation/agriculture-schemes-in-india"
+  },
+  {
+    "id": "nmoop",
+    "name": "National Mission on Oilseeds & Oil Palm (NMOOP)",
+    "description": "Promotes cultivation of oilseeds and palm to reduce import dependence.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 76,
+    "amount": "Area-based subsidies",
+    "benefits": "Improved production and farmers’ profitability.",
+    "eligibility": [
+      "Oilseed and oil palm growers"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://igod.gov.in/"
+  },
+  {
+    "id": "kkisan-portal",
+    "name": "K-Kisan (Krishi Kalyan Portal)",
+    "description": "Digital information portal for weather, market prices and agronomy advisory via SMS.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 77,
+    "amount": "Free information service",
+    "benefits": "Real‑time advisories via mobile.",
+    "eligibility": [
+      "Registered farmers with mobile number"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://acviss.com/glossary/k-kisan/"
+  },
+  {
+    "id": "pm-kisan-maan-dhan",
+    "name": "PM‑Kisan Maan‑Dhan Yojana (PM‑KMY)",
+    "description": "Pension scheme offering ₹3,000/month for small/marginal famers after retirement.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 85,
+    "amount": "₹3,000/month",
+    "benefits": "Old‑age financial security.",
+    "eligibility": [
+      "Aged between 18‑40 years",
+      "Small and marginal farmers"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://pmmodiyojanas.in/pm-kisan-maandhan-yojna/"
+  },
+  {
+    "id": "msdf",
+    "name": "Micro-Irrigation Fund (under AIF)",
+    "description": "Dedicated fund under Agri Infra Fund to support micro-irrigation infrastructure.",
+    "category": "Credit",
+    "difficulty": "Medium",
+    "popularity": 80,
+    "amount": "Interest subvention on loans for irrigation systems",
+    "benefits": "Promotes water-efficient farming.",
+    "eligibility": [
+      "All farmer groups under AIF support"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.agrifund.gov.in/"
+  },
+  {
+    "id": "pm-formalisation-food-processing",
+    "name": "PM FME Scheme",
+    "description": "Financial and technical support for micro food processing enterprises created by farmers.",
+    "category": "Credit",
+    "difficulty": "Medium",
+    "popularity": 82,
+    "amount": "Up to ₹15 lakh",
+    "benefits": "Boosts rural manufacturing and incomes.",
+    "eligibility": [
+      "Farmers, SHGs, FPOs"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.mofpi.gov.in/schemes"
+  },
+  {
+    "id": "agrimarket-information-service",
+    "name": "AGMARKNET",
+    "description": "Provides real-time market price information across regulated agricultural markets in India.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 78,
+    "amount": "Free information via web & SMS",
+    "benefits": "Enables informed price decisions.",
+    "eligibility": [
+      "All farmers and traders"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://agmarknet.gov.in"
+  },
+  {
+    "id": "mission-natural-farming",
+    "name": "National Mission on Natural Farming (NMNF)",
+    "description": "Promotes chemical-free farming practices and organic certification.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 74,
+    "amount": "Financial assistance for certification & inputs",
+    "benefits": "Healthier soil and higher-value produce.",
+    "eligibility": [
+      "Interested farmers/communities"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://testbook.com/ias-preparation/agriculture-schemes-in-india"
+  },
+  {
+    "id": "krishi-samruddhi-yojana-maharashtra",
+    "name": "Krishi Samruddhi Yojana (Maharashtra)",
+    "description": "State initiative with ₹5,000 crore yearly support for sustainable agriculture in Maharashtra.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 76,
+    "amount": "₹5,000 crore/year",
+    "benefits": "Support for organic farming, mechanization, infrastructure.",
+    "eligibility": [
+      "Women, SC/ST, small/marginal farmers in Maharashtra"
+    ],
+    "deadline": "2025‑30",
+    "applicationLink": "https://timesofindia.indiatimes.com/city/nashik"
+  },
+  {
+    "id": "uttarakhand-millet-kiwi-policy",
+    "name": "Millet Mission & Kiwi/Dragon Fruit Policy (Uttarakhand)",
+    "description": "Horticulture initiative supporting millets and high‑value fruit cultivation in hill districts.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 70,
+    "amount": "Budgets of ₹134‑894 crore for multiple missions",
+    "benefits": "Boosts horticultural income in Uttarakhand.",
+    "eligibility": [
+      "Farmers in designated hilly districts"
+    ],
+    "deadline": "2025–2030",
+    "applicationLink": "https://timesofindia.indiatimes.com/city/dehradun"
+  },
+  {
+    "id": "rythu-bandhu-telangana",
+    "name": "Rythu Bandhu Scheme (Telangana)",
+    "description": "Investment support scheme providing ₹5,000 per acre per season directly to farmer landowners.",
+    "category": "Income Support",
+    "difficulty": "Easy",
+    "popularity": 85,
+    "amount": "₹10,000/year",
+    "benefits": "Direct agricultural investment support.",
+    "eligibility": [
+      "Landholding farmers in Telangana",
+      "Two crops per year"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://en.wikipedia.org/wiki/Rythu_Bandhu_scheme"
+  },
+  {
+    "id": "tn-iamp",
+    "name": "Tamil Nadu Irrigated Agriculture Modernization Project (TNIAMP)",
+    "description": "A World Bank assisted project to upgrade irrigated agriculture including precision farming, water‑saving technologies and crop diversification.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 80,
+    "amount": "Varies by intervention",
+    "benefits": "Increases yields via drip-fertigation and precision farming demonstration.",
+    "eligibility": [
+      "Farmers in selected sub-basin areas",
+      "Participating via local agriculture extension units"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://en.wikipedia.org/wiki/TN-IAMWARM"
+  },
+  {
+    "id": "tn-farm-mechanisation-programme",
+    "name": "Tamil Nadu Agricultural Mechanisation Programme",
+    "description": "Subsidy scheme for procurement of farm machinery such as tractors, power tillers, paddy transplanters and reapers.",
+    "category": "Credit",
+    "difficulty": "Medium",
+    "popularity": 75,
+    "amount": "25% subsidy or GoI ceiling, whichever lower",
+    "benefits": "Reduces manual labour, increases efficiency.",
+    "eligibility": [
+      "All farmers (except Chennai district)",
+      "Eligible under Aadhaar/bank linkage"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://agritech.tnau.ac.in/agricultural_engineering/agriengg_govt_schemes.html"
+  },
+  {
+    "id": "tn-minor-irrigation-scheme",
+    "name": "Minor Irrigation Scheme (Tamil Nadu)",
+    "description": "Supports community-based water harvesting: drip irrigation, farm ponds, check dams and borewells.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 78,
+    "amount": "100% grant for WUAs; 90% subsidy to farmers",
+    "benefits": "Improves groundwater recharge and farm water reliability.",
+    "eligibility": [
+      "Farmers in selected sub‑basins",
+      "Water Users Association participation"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://agritech.tnau.ac.in/agricultural_engineering/agriengg_govt_schemes.html"
+  },
+  {
+    "id": "tn-kudimaramathu",
+    "name": "Kudimaramathu Scheme",
+    "description": "Community‑based rejuvenation of tanks and lakes, dredging silt and strengthening embankments with farmer participation.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 82,
+    "amount": "State budget allocation per year (~₹100‑300 crore)",
+    "benefits": "Enhances groundwater levels, provides nutrient soil residue to farmers.",
+    "eligibility": [
+      "Agricultural communities adjoining tanks/lakes",
+      "Block-level Water Resources oversight"
+    ],
+    "deadline": "Ongoing since 2017",
+    "applicationLink": "https://en.wikipedia.org/wiki/Kudimaramathu_Scheme"
+  },
+  {
+    "id": "tn-uzhavar-sandhai",
+    "name": "Uzhavar Sandhai (Farmers' Market)",
+    "description": "State-run farmers’ market promoting direct sale of produce to consumers without intermediaries.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 80,
+    "amount": "No direct payout; market infrastructure support",
+    "benefits": "Better price discovery and reduced middlemen.",
+    "eligibility": [
+      "Registered farmers/vendors in Tamil Nadu",
+      "Participation via Agricultural Marketing Board"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://en.wikipedia.org/wiki/Uzhavar_Santhai"
+  },
+  {
+    "id": "tn-rkvyaftaarr-grants",
+    "name": "RKVY‑RAFTAAR (TN Agri‑Startups)",
+    "description": "Tamil Nadu Agricultural University supported grants to agri‑startups under RKVY-RAFTAAR mission.",
+    "category": "Credit",
+    "difficulty": "Medium",
+    "popularity": 70,
+    "amount": "₹8.98 crore to 85 startups since 2019",
+    "benefits": "Encourages innovation, agri‑technology solutions led by startups.",
+    "eligibility": [
+      "Agri-startups supported by TNAU/RKVY",
+      "Agri-entrepreneur teams"
+    ],
+    "deadline": "Since 2019 ongoing support",
+    "applicationLink": "https://timesofindia.indiatimes.com/city/coimbatore/tnau-disburses-rs-8-98crore-grants-to-85-agri-startups"
+  },
+  {
+    "id": "tn-integrated-pest-management",
+    "name": "Integrated Pest Management (Tamil Nadu)",
+    "description": "Promotes eco‑friendly pest control practices via subsidies, training and extension services.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 75,
+    "amount": "Input subsidy + training kit cost",
+    "benefits": "Ensures low pesticide residue and sustainable pest management.",
+    "eligibility": [
+      "Fruit and vegetable growers in TN",
+      "Voluntary participation in IPM programs"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://farmonaut.com/asia/agricultural-schemes-in-india-tamil-nadu-2025-guide"
+  },
+  {
+    "id": "tn-agricultural-engineering-funds",
+    "name": "Kalaignar All‑Village Integrated Agricultural Development Programme",
+    "description": "Government‑funded initiative for farm mechanization and infrastructure across all villages.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 81,
+    "amount": "Subsidies for power tillers, weeders, transplanters etc.",
+    "benefits": "Improves mechanization access for marginal farmers.",
+    "eligibility": [
+      "Small and marginal farmers across TN",
+      "Managed via district Farmer Welfare Centres"
+    ],
+    "deadline": "As per TN agribudget allocations",
+    "applicationLink": "https://www.tnpscthervupettagam.com/articles-detail/tamil-nadu-agriculture-budget‑2025‑26"
+  },
+  {
+    "id": "mah-krishi-samruddhi-yojana",
+    "name": "Krishi Samruddhi Yojana (Maharashtra)",
+    "description": "State‑level agriculture uplift programme with ₹5,000 crore annual investment to support infrastructure, innovation & DBT subsidies.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 88,
+    "amount": "₹5,000 crore/year",
+    "benefits": "Boosts modern farming practices, credit, infrastructure via DBT.",
+    "eligibility": [
+      "All farmers in Maharashtra",
+      "Projects aligned with climate-resilient farming"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://mahadbt.maharashtra.gov.in/Farmer/RegistrationLogin/RegistrationLogin?utm_source=chatgpt.com"
+  },
+  {
+    "id": "kar-raithu-bhagya",
+    "name": "Raitha Bhagya Scheme (Karnataka)",
+    "description": "Income support programme for Karnataka farmers independent of landholding size.",
+    "category": "Income Support",
+    "difficulty": "Easy",
+    "popularity": 85,
+    "amount": "Fixed annual payment (state-specific)",
+    "benefits": "Direct income assistance to farmers.",
+    "eligibility": [
+      "Farmers registered in state DBT portal"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.scribd.com/document/732644206/Karnataka-Schemes-List?utm_source=chatgpt.com"
+  },
+  {
+    "id": "kar-krishi-bhagya-drip",
+    "name": "Krishi Bhagya Scheme (Karnataka)",
+    "description": "Subsidy for micro-irrigation to promote drip and sprinkler systems in farming.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 80,
+    "amount": "50‑70% subsidy on equipment",
+    "benefits": "Improved water use efficiency and crop productivity.",
+    "eligibility": [
+      "Registered farmers in Karnataka",
+      "Applying through Horticulture Dept."
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.indiafilings.com/learn/krishi-bhagya-scheme/?utm_source=chatgpt.com"
+  },
+  {
+    "id": "tel-rabandu-bandhu",
+    "name": "Rythu Bandhu Scheme (Telangana)",
+    "description": "Investment support scheme offering ₹10,000/year directly to land-owning farmers.",
+    "category": "Income Support",
+    "difficulty": "Easy",
+    "popularity": 90,
+    "amount": "₹5,000 per acre per season",
+    "benefits": "Supports crop investment for two seasons.",
+    "eligibility": [
+      "Land-owning farmers in Telangana"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.rythubharosa.telangana.gov.in/?utm_source=chatgpt.com"
+  },
+  {
+    "id": "har-fasal-suraksha-yojana",
+    "name": "Haryana Fasal Suraksha Yojana",
+    "description": "State-backed crop insurance scheme supplementing PMFBY to cover yield losses.",
+    "category": "Insurance",
+    "difficulty": "Medium",
+    "popularity": 75,
+    "amount": "Premium subsidy funded by state",
+    "benefits": "Additional crop insurance support to local growers.",
+    "eligibility": [
+      "Registered farmers under PMFBY in Haryana"
+    ],
+    "deadline": "Seasonal",
+    "applicationLink": "https://www.rythubharosa.telangana.gov.in/?utm_source=chatgpt.com"
+  },
+  {
+    "id": "assam-nfsm",
+    "name": "National Food Security Mission (Assam)",
+    "description": "Assam branch of NFSM providing inputs and support for paddy, pulses and cereals.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 70,
+    "amount": "Input subsidies (seed/fertilizer support)",
+    "benefits": "Enhances grain productivity and food security.",
+    "eligibility": [
+      "Farmers growing target crops in Assam"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://diragri.assam.gov.in/schemes/national-food-security-mission-nfsm"
+  },
+  {
+    "id": "ap-krishonnati",
+    "name": "Krishonnati Yojana (Andhra Pradesh)",
+    "description": "State‑level agricultural growth programme focused on modernization and input support.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 75,
+    "amount": "State budget-funded grant support",
+    "benefits": "Boosts innovation, mechanization, & sustainable farming.",
+    "eligibility": [
+      "Farmers and FPOs in Andhra Pradesh"
+    ],
+    "deadline": "Ongoing",
+    "applicationLink": "https://agriculture.ap.gov.in/home"
+  },
+  {
+    "id": "maha-nanaji-krishi-sanjeevani",
+    "name": "Nanaji Deshmukh Krishi Sanjivani Yojana (Maharashtra)",
+    "description": "Drought-prone area rehabilitation scheme funded via a World Bank loan (~₹28,000 crore) to ensure sustainable cropping.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 85,
+    "amount": "₹28,000 crore World Bank‑assisted",
+    "benefits": "Revives drought‑prone areas for resilient farming.",
+    "eligibility": ["Farmers in designated drought‑vulnerable zones"],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.scribd.com/document/732644206/Karnataka-Schemes-List?utm_source=chatgpt.com"
+  },
+  {
+    "id": "kar-raitha-bhagya",
+    "name": "Raitha Bhagya Scheme (Karnataka)",
+    "description": "Provides universal income support to Karnataka farmers regardless of landholding size.",
+    "category": "Income Support",
+    "difficulty": "Easy",
+    "popularity": 85,
+    "amount": "Fixed ₹ payment (state‑determined)",
+    "benefits": "Regular cash support to registered farmers.",
+    "eligibility": ["Registered farmers via Karnataka DBT portal"],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.scribd.com/document/732644206/Karnataka-Schemes-List?utm_source=chatgpt.com"
+  },
+  {
+    "id": "kar-krishi-bhagya-drip",
+    "name": "Krishi Bhagya (Karnataka) – Drip Irrigation",
+    "description": "Micro-irrigation subsidy scheme providing drip and sprinkler systems to farmers.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 80,
+    "amount": "50–70% subsidy on irrigation systems",
+    "benefits": "Enhances water-use efficiency and crop yields.",
+    "eligibility": ["Registered farmers applying via Horticulture Dept."],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.indiafilings.com/learn/krishi-bhagya-scheme/?utm_source=chatgpt.com"
+  },
+  {
+    "id": "kar-krishi-yantra-dhare",
+    "name": "Customized Hiring Service Centre – Krishi Yantra Dhare (Karnataka)",
+    "description": "Rental service for farm machinery to make equipment accessible at affordable rates.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 78,
+    "amount": "Low-cost machinery hire service",
+    "benefits": "Access to high-cost implements for small farmers.",
+    "eligibility": ["Farmers in participating districts/hoblis"],
+    "deadline": "Ongoing",
+    "applicationLink": "https://rythubharosa.telangana.gov.in/"
+  },
+  {
+    "id": "kar-raita-suraksha-kspmfb",
+    "name": "Karnataka Raita Suraksha – PMFBY State Variant",
+    "description": "State-level crop insurance that supplements PMFBY to provide broader coverage.",
+    "category": "Insurance",
+    "difficulty": "Medium",
+    "popularity": 75,
+    "amount": "State-funded premium subsidy",
+    "benefits": "Improved crop insurance benefits to farmers.",
+    "eligibility": ["Farmers registered under PMFBY in Karnataka"],
+    "deadline": "Season‑wise",
+    "applicationLink": "https://fasal.haryana.gov.in/"
+  },
+  {
+    "id": "kar-nam-unified-market-platform",
+    "name": "Unified Market Platform (UMP) – Karnataka",
+    "description": "Digital trading system (ReMS) connecting farmers and buyers across state-run markets.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 80,
+    "amount": "Commission-free online market access",
+    "benefits": "Higher price realization through transparent trade.",
+    "eligibility": ["Registered farmers/traders in UMP"],
+    "deadline": "Ongoing",
+    "applicationLink": ""
+  },
+  {
+    "id": "kar-climate-carbon-credit-pilot",
+    "name": "Karnataka NABARD Carbon Credit Pilot",
+    "description": "Pilot scheme encouraging biomass/tree plantation among farmers with carbon credit generation.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 70,
+    "amount": "Carbon credit revenue earnings",
+    "benefits": "Additional income from environmental services.",
+    "eligibility": ["Mango farmers in affected districts (e.g. Koppal)"],
+    "deadline": "Pilot phase",
+    "applicationLink": ""
+  },
+  {
+    "id": "tn-iamwarm-project",
+    "name": "Tamil Nadu IAMWARM Project",
+    "description": "World Bank-assisted scheme for modernizing irrigated agriculture with water-saving tech and crop diversification.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 80,
+    "amount": "Water intervention grants per sub-basin",
+    "benefits": "Boosts productivity through efficient irrigation.",
+    "eligibility": ["Farmers in selected sub-basins"],
+    "deadline": "Ongoing",
+    "applicationLink": ""
+  },
+  {
+    "id": "tn-agri-mechanisation",
+    "name": "TN Agricultural Mechanisation Programme",
+    "description": "State subsidy programme for farm machinery including tractors, tillers, transplanters.",
+    "category": "Credit",
+    "difficulty": "Medium",
+    "popularity": 75,
+    "amount": "25% subsidy or GoI ceiling",
+    "benefits": "Improves productivity and reduces labour demand.",
+    "eligibility": ["Farmers (excluding Chennai district)"],
+    "deadline": "Ongoing",
+    "applicationLink": ""
+  },
+  {
+    "id": "tn-minor-irrigation",
+    "name": "Minor Irrigation Scheme (Tamil Nadu)",
+    "description": "Support for farm ponds, check dams & community borewells with high subsidy rates.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 78,
+    "amount": "100% for WUAs; 90% to farmers",
+    "benefits": "Sustainable farm water management.",
+    "eligibility": ["WUAs and farmers in sub‑basins"],
+    "deadline": "Ongoing",
+    "applicationLink": ""
+  },
+  {
+    "id": "tn-uzhavar-sandhai",
+    "name": "Uzhavar Sandhai (Farmers’ Market, TN)",
+    "description": "Direct sale platform allowing farmers to sell produce directly to consumers.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 80,
+    "amount": "Market infrastructure support",
+    "benefits": "Eliminates middlemen, improves farmer margin.",
+    "eligibility": ["Registered TN farmers/vendors"],
+    "deadline": "Ongoing",
+    "applicationLink": ""
+  },
+  {
+    "id": "tn-integrated-pest-management",
+    "name": "Integrated Pest Management (Tamil Nadu)",
+    "description": "Eco-friendly pest control through input subsidy and farmer training programs.",
+    "category": "General",
+    "difficulty": "Easy",
+    "popularity": 75,
+    "amount": "Input subsidy plus training cost coverage",
+    "benefits": "Safe pest management and residue reduction.",
+    "eligibility": ["Fruit & vegetable farmers in TN"],
+    "deadline": "Ongoing",
+    "applicationLink": ""
+  },
+  {
+    "id": "gnm-nfsm-assam",
+    "name": "NFSM – National Food Security Mission (Assam)",
+    "description": "State branch of NFSM providing input subsidy to target crops (rice, pulses etc.) in Assam.",
+    "category": "Sustainability",
+    "difficulty": "Medium",
+    "popularity": 70,
+    "amount": "Seed/fertilizer input aid",
+    "benefits": "Boosts food crop productivity.",
+    "eligibility": ["Farmers growing NFSM crops in Assam"],
+    "deadline": "Ongoing",
+    "applicationLink": "https://www.nabard.org/auth/writereaddata/careernotices/2701232429policy-initiatives-state-government-2022-23.pdf?utm_source=chatgpt.com"
+  },
+  {
+    "id": "ap-krishonnati",
+    "name": "Krishonnati Yojana (Andhra Pradesh)",
+    "description": "State agricultural modernization project for infrastructural development and innovation support.",
+    "category": "General",
+    "difficulty": "Medium",
+    "popularity": 75,
+    "amount": "State-funded grants",
+    "benefits": "Enables modern farming through infrastructure support.",
+    "eligibility": ["Farmers & FPOs in Andhra Pradesh"],
+    "deadline": "Ongoing",
+    "applicationLink": "https://agriculture.ap.gov.in/home"
+  },
+  {
+    "id": "hr-fasal-suraksha-haryana",
+    "name": "Haryana Fasal Suraksha Yojana",
+    "description": "State-level crop insurance scheme building upon PMFBY to provide additional protection.",
+    "category": "Insurance",
+    "difficulty": "Medium",
+    "popularity": 75,
+    "amount": "State-funded premium subsidy",
+    "benefits": "Additional insurance benefit for Haryana farmers.",
+    "eligibility": ["Registered PMFBY farmers in Haryana"],
+    "deadline": "Seasonal",
+    "applicationLink": ""
+  },
+  {
+    "id": "up-minimum-floor-price-msp",
+    "name": "Minimum Floor Price Scheme (Uttar Pradesh)",
+    "description": "Price support for perishables like tomato, onion, potato via government procurement.",
+    "category": "Income Support",
+    "difficulty": "Medium",
+    "popularity": 72,
+    "amount": "Floor price assured procurement",
+    "benefits": "Prevents distress sale of perishables.",
+    "eligibility": ["Farmers of perishable crops in UP"],
+    "deadline": "Seasonal",
+    "applicationLink": ""
+  }
+]

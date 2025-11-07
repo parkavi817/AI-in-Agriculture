@@ -1,0 +1,442 @@
+#!/bin/bash
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+BINARY_NAME="autonomy"
+INSTALL_DIR="$HOME/.local/bin"
+REPO_URL="https://github.com/vadiminshakov/autonomy"
+GITHUB_API_URL="https://api.github.com/repos/vadiminshakov/autonomy"
+TEMP_DIR=""
+
+print_status() {
+    echo -e "${GREEN}[INFO]${NC} $1"
+}
+
+print_warning() {
+    echo -e "${YELLOW}[WARNING]${NC} $1"
+}
+
+print_error() {
+    echo -e "${RED}[ERROR]${NC} $1"
+}
+
+detect_os_arch() {
+    OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+    ARCH=$(uname -m)
+    
+    case $OS in
+        linux*)
+            GOOS="linux"
+            ;;
+        darwin*)
+            GOOS="darwin"
+            ;;
+        cygwin*|mingw*|msys*)
+            GOOS="windows"
+            ;;
+        *)
+            print_error "unsupported operating system: $OS"
+            exit 1
+            ;;
+    esac
+    
+    case $ARCH in
+        x86_64|amd64)
+            GOARCH="amd64"
+            ;;
+        aarch64|arm64)
+            GOARCH="arm64"
+            ;;
+        *)
+            print_error "unsupported architecture: $ARCH"
+            exit 1
+            ;;
+    esac
+    
+    print_status "detected system: $GOOS-$GOARCH"
+}
+
+get_latest_release() {
+    print_status "getting latest release information..."
+    
+    if command -v curl &> /dev/null; then
+        print_status "trying to get latest stable release..."
+        # First try to get the latest stable release
+        LATEST_RESPONSE=$(curl -s "$GITHUB_API_URL/releases/latest" 2>/dev/null)
+        if [[ "$LATEST_RESPONSE" != *"Not Found"* ]] && [[ -n "$LATEST_RESPONSE" ]]; then
+            LATEST_RELEASE=$(echo "$LATEST_RESPONSE" | grep -o '"tag_name": *"[^"]*"' | sed 's/"tag_name": *"//; s/"//')
+            print_status "found stable release: $LATEST_RELEASE"
+        else
+            print_status "no stable release found, trying pre-releases..."
+        fi
+        
+        # If no stable release found, get the most recent release (including pre-releases)
+        if [[ -z "$LATEST_RELEASE" ]]; then
+            RELEASES_RESPONSE=$(curl -s "$GITHUB_API_URL/releases" 2>/dev/null)
+            if [[ -n "$RELEASES_RESPONSE" ]]; then
+                LATEST_RELEASE=$(echo "$RELEASES_RESPONSE" | grep -o '"tag_name": *"[^"]*"' | sed 's/"tag_name": *"//; s/"//' | head -1)
+                if [[ -n "$LATEST_RELEASE" ]]; then
+                    print_status "found pre-release: $LATEST_RELEASE"
+                else
+                    print_error "no tag_name found in releases response"
+                fi
+            else
+                print_error "empty releases response"
+            fi
+        fi
+    elif command -v wget &> /dev/null; then
+        print_status "trying to get latest stable release..."
+        # First try to get the latest stable release
+        LATEST_RESPONSE=$(wget -qO- "$GITHUB_API_URL/releases/latest" 2>/dev/null)
+        if [[ "$LATEST_RESPONSE" != *"Not Found"* ]] && [[ -n "$LATEST_RESPONSE" ]]; then
+            LATEST_RELEASE=$(echo "$LATEST_RESPONSE" | grep -o '"tag_name": *"[^"]*"' | sed 's/"tag_name": *"//; s/"//')
+            print_status "found stable release: $LATEST_RELEASE"
+        else
+            print_status "no stable release found, trying pre-releases..."
+        fi
+        
+        # If no stable release found, get the most recent release (including pre-releases)
+        if [[ -z "$LATEST_RELEASE" ]]; then
+            RELEASES_RESPONSE=$(wget -qO- "$GITHUB_API_URL/releases" 2>/dev/null)
+            if [[ -n "$RELEASES_RESPONSE" ]]; then
+                LATEST_RELEASE=$(echo "$RELEASES_RESPONSE" | grep -o '"tag_name": *"[^"]*"' | sed 's/"tag_name": *"//; s/"//' | head -1)
+                if [[ -n "$LATEST_RELEASE" ]]; then
+                    print_status "found pre-release: $LATEST_RELEASE"
+                else
+                    print_error "no tag_name found in releases response"
+                fi
+            else
+                print_error "empty releases response"
+            fi
+        fi
+    else
+        print_error "curl or wget is required to download binary"
+        exit 1
+    fi
+    
+    if [[ -z "$LATEST_RELEASE" ]]; then
+        print_error "failed to get latest release information"
+        exit 1
+    fi
+    
+    print_status "latest release: $LATEST_RELEASE"
+    return 0
+}
+
+download_binary() {
+    if [[ "$GOOS" == "windows" ]]; then
+        ARCHIVE_NAME="autonomy-${GOOS}-${GOARCH}.zip"
+        BINARY_FILE="autonomy.exe"
+    else
+        ARCHIVE_NAME="autonomy-${GOOS}-${GOARCH}.tar.gz"
+        BINARY_FILE="autonomy"
+    fi
+    
+    DOWNLOAD_URL="$REPO_URL/releases/download/$LATEST_RELEASE/$ARCHIVE_NAME"
+    
+    print_status "downloading binary: $DOWNLOAD_URL"
+    
+    DOWNLOAD_SUCCESS=false
+    MAX_RETRIES=3
+    RETRY_COUNT=0
+    
+    # Function to attempt download with retries
+    attempt_download() {
+        local url="$1"
+        local output="$2"
+        local attempt=0
+        
+        while [[ $attempt -lt $MAX_RETRIES ]]; do
+            attempt=$((attempt + 1))
+            print_status "download attempt $attempt of $MAX_RETRIES..."
+            
+            if command -v curl &> /dev/null; then
+                # Add more robust curl options: follow redirects, set timeouts, show progress
+                if curl -L --fail --connect-timeout 30 --max-time 300 --retry 2 --retry-delay 5 "$url" -o "$output"; then
+                    # Verify the file was actually downloaded and has content
+                    if [[ -f "$output" && -s "$output" ]]; then
+                        return 0
+                    else
+                        print_warning "downloaded file is empty or doesn't exist"
+                        rm -f "$output"
+                    fi
+                fi
+            elif command -v wget &> /dev/null; then
+                # Add more robust wget options
+                if wget --timeout=30 --tries=3 --retry-connrefused "$url" -O "$output"; then
+                    # Verify the file was actually downloaded and has content
+                    if [[ -f "$output" && -s "$output" ]]; then
+                        return 0
+                    else
+                        print_warning "downloaded file is empty or doesn't exist"
+                        rm -f "$output"
+                    fi
+                fi
+            else
+                print_error "curl or wget is required to download binary"
+                exit 1
+            fi
+            
+            if [[ $attempt -lt $MAX_RETRIES ]]; then
+                print_warning "download failed, retrying in 5 seconds..."
+                sleep 5
+            fi
+        done
+        
+        return 1
+    }
+    
+    # Try to download the primary architecture
+    if attempt_download "$DOWNLOAD_URL" "$ARCHIVE_NAME"; then
+        DOWNLOAD_SUCCESS=true
+    fi
+    
+    # If download failed and we're on Darwin ARM64, try AMD64 as fallback
+    if [[ "$DOWNLOAD_SUCCESS" == false && "$GOOS" == "darwin" && "$GOARCH" == "arm64" ]]; then
+        print_warning "ARM64 download failed, trying AMD64 binary as fallback (will run under Rosetta)"
+        GOARCH="amd64"
+        ARCHIVE_NAME="autonomy-${GOOS}-${GOARCH}.tar.gz"
+        DOWNLOAD_URL="$REPO_URL/releases/download/$LATEST_RELEASE/$ARCHIVE_NAME"
+        
+        print_status "downloading binary: $DOWNLOAD_URL"
+        
+        if attempt_download "$DOWNLOAD_URL" "$ARCHIVE_NAME"; then
+            DOWNLOAD_SUCCESS=true
+        fi
+    fi
+    
+    if [[ "$DOWNLOAD_SUCCESS" == false ]]; then
+        print_error "failed to download binary after all attempts"
+        print_error "you can try downloading manually from: $REPO_URL/releases"
+        exit 1
+    fi
+    
+    print_status "extracting archive..."
+    
+    if [[ "$GOOS" == "windows" ]]; then
+        if command -v unzip &> /dev/null; then
+            unzip -q "$ARCHIVE_NAME"
+        else
+            print_error "unzip is required to extract archive"
+            exit 1
+        fi
+    else
+        if ! tar -xzf "$ARCHIVE_NAME"; then
+            print_error "failed to extract archive (possibly corrupted)"
+            # If extraction failed and we haven't tried fallback yet, try AMD64 on Darwin ARM64
+            if [[ "$GOOS" == "darwin" && "$GOARCH" == "arm64" ]]; then
+                print_warning "ARM64 archive corrupted, trying AMD64 binary as fallback"
+                rm -f "$ARCHIVE_NAME"
+                GOARCH="amd64"
+                ARCHIVE_NAME="autonomy-${GOOS}-${GOARCH}.tar.gz"
+                DOWNLOAD_URL="$REPO_URL/releases/download/$LATEST_RELEASE/$ARCHIVE_NAME"
+                
+                print_status "downloading binary: $DOWNLOAD_URL"
+                
+                if command -v curl &> /dev/null; then
+                    if ! curl -sL "$DOWNLOAD_URL" -o "$ARCHIVE_NAME"; then
+                        print_error "failed to download AMD64 fallback binary"
+                        exit 1
+                    fi
+                elif command -v wget &> /dev/null; then
+                    if ! wget -q "$DOWNLOAD_URL" -O "$ARCHIVE_NAME"; then
+                        print_error "failed to download AMD64 fallback binary"
+                        exit 1
+                    fi
+                fi
+                
+                print_status "extracting AMD64 archive..."
+                if ! tar -xzf "$ARCHIVE_NAME"; then
+                    print_error "failed to extract AMD64 archive"
+                    exit 1
+                fi
+            else
+                exit 1
+            fi
+        fi
+    fi
+    
+    if [[ ! -f "$BINARY_FILE" ]]; then
+        print_error "binary not found after extraction"
+        exit 1
+    fi
+    
+    # rename for consistency
+    if [[ "$BINARY_FILE" != "$BINARY_NAME" ]]; then
+        mv "$BINARY_FILE" "$BINARY_NAME"
+    fi
+    
+    # remove archive
+    rm -f "$ARCHIVE_NAME"
+    
+    print_status "binary downloaded successfully"
+    return 0
+}
+
+check_permissions() {
+    # Test if we can write to the directory first
+    if [[ -w "$INSTALL_DIR" ]] || mkdir -p "$INSTALL_DIR" 2>/dev/null && [[ -w "$INSTALL_DIR" ]]; then
+        USE_SUDO=false
+        return 0
+    fi
+    
+    # For user directories like ~/.local/bin or /tmp, no sudo needed - just try to create
+    if [[ "$INSTALL_DIR" == *"$HOME"* ]] || [[ "$INSTALL_DIR" == /tmp/* ]]; then
+        USE_SUDO=false
+        return 0
+    fi
+    
+    # For system directories, check if we need sudo
+    if [[ "$EUID" -ne 0 ]]; then
+        print_warning "script not running as root. Trying to install with sudo..."
+        if ! sudo -n true 2>/dev/null; then
+            print_error "sudo privileges required for installation to $INSTALL_DIR"
+            echo "run script with sudo or ensure you have write permissions to $INSTALL_DIR"
+            exit 1
+        fi
+        USE_SUDO=true
+    else
+        USE_SUDO=false
+    fi
+}
+
+install_binary() {
+    print_status "installing binary to $INSTALL_DIR..."
+    
+    if [[ ! -f "$BINARY_NAME" ]]; then
+        print_error "binary file $BINARY_NAME not found in temporary directory"
+        exit 1
+    fi
+    
+    if [[ "$USE_SUDO" == true ]]; then
+        sudo cp "$BINARY_NAME" "$INSTALL_DIR/"
+        sudo chmod +x "$INSTALL_DIR/$BINARY_NAME"
+    else
+        cp "$BINARY_NAME" "$INSTALL_DIR/"
+        chmod +x "$INSTALL_DIR/$BINARY_NAME"
+    fi
+    
+    if [[ $? -eq 0 ]]; then
+        print_status "binary installed successfully to $INSTALL_DIR/$BINARY_NAME"
+    else
+        print_error "failed to install binary"
+        exit 1
+    fi
+}
+
+verify_installation() {
+    if command -v "$BINARY_NAME" &> /dev/null; then
+        print_status "installation completed successfully!"
+        print_status "you can now run '$BINARY_NAME' from any directory"
+    else
+        print_warning "binary installed but not found in PATH"
+        print_warning "ensure $INSTALL_DIR is in your PATH"
+        if [[ "$INSTALL_DIR" == *"$HOME/.local/bin"* ]]; then
+            print_status "you can add it to your PATH by running:"
+            print_status "echo 'export PATH=\"\$HOME/.local/bin:\$PATH\"' >> ~/.bashrc"
+            print_status "echo 'export PATH=\"\$HOME/.local/bin:\$PATH\"' >> ~/.zshrc"
+        fi
+    fi
+}
+
+cleanup() {
+    if [[ -n "$TEMP_DIR" && -d "$TEMP_DIR" ]]; then
+        print_status "cleaning up temporary directory..."
+        cd /
+        rm -rf "$TEMP_DIR"
+    else
+        # Fallback cleanup in current directory
+        rm -f "$BINARY_NAME" autonomy-*.tar.gz autonomy-*.zip autonomy.exe
+    fi
+}
+
+show_usage() {
+    echo "Installation script for $BINARY_NAME"
+    echo ""
+    echo "Usage: $0 [options]"
+    echo ""
+    echo "Options:"
+    echo "  -d, --dir DIR        install to specified directory (default: $INSTALL_DIR)"
+    echo "  -v, --version VER    install specific version (e.g., v1.0.0)"
+    echo "  -h, --help           show this help"
+    echo ""
+    echo "Examples:"
+    echo "  $0                        # download and install latest version"
+    echo "  $0 -d ~/bin               # install to ~/bin"
+    echo "  $0 -v v1.0.0              # install version v1.0.0"
+    echo "  sudo $0                   # install with root privileges"
+}
+
+main() {
+    SPECIFIC_VERSION=""
+    
+    # parse arguments
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -d|--dir)
+                INSTALL_DIR="$2"
+                shift 2
+                ;;
+            -v|--version)
+                SPECIFIC_VERSION="$2"
+                shift 2
+                ;;
+            -h|--help)
+                show_usage
+                exit 0
+                ;;
+            *)
+                print_error "unknown option: $1"
+                show_usage
+                exit 1
+                ;;
+        esac
+    done
+
+    print_status "starting installation of $BINARY_NAME..."
+    
+    # Create a temporary working directory for downloads
+    TEMP_DIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'autonomy-install')
+    if [[ ! -d "$TEMP_DIR" ]]; then
+        print_error "failed to create temporary directory"
+        exit 1
+    fi
+    
+    print_status "using temporary directory: $TEMP_DIR"
+    cd "$TEMP_DIR" || {
+        print_error "failed to change to temporary directory"
+        exit 1
+    }
+    
+    # create install directory if it doesn't exist
+    if [[ ! -d "$INSTALL_DIR" ]]; then
+        print_status "creating directory $INSTALL_DIR..."
+        mkdir -p "$INSTALL_DIR"
+    fi
+    
+    # check permissions
+    check_permissions
+    
+    # detect system and download binary
+    detect_os_arch
+    
+    if [[ -n "$SPECIFIC_VERSION" ]]; then
+        LATEST_RELEASE="$SPECIFIC_VERSION"
+        print_status "using specified version: $LATEST_RELEASE"
+    else
+        get_latest_release
+    fi
+    
+    download_binary
+    install_binary
+    verify_installation
+    cleanup
+}
+
+trap cleanup EXIT
+
+main "$@" 
